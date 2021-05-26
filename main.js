@@ -4,7 +4,7 @@ function convertFahrToCelsius(fahrenheit) {
   let errorMessage;
 
   // since only a number and string type is accepted
-  if (paramType === "number" || paramType == "string") {
+  if (paramType === "number" || (paramType == "string" && fahrenheit !== "")) {
     const celsius = ((parseInt(fahrenheit) - 32) * (5 / 9)).toFixed(4);
     console.log(celsius);
     return celsius;
@@ -21,6 +21,8 @@ function convertFahrToCelsius(fahrenheit) {
 // Test cases
 convertFahrToCelsius(0);
 convertFahrToCelsius("0");
+convertFahrToCelsius("");
+convertFahrToCelsius(false);
 convertFahrToCelsius([1, 2, 3]);
 convertFahrToCelsius({ temp: 0 });
 
@@ -71,3 +73,5 @@ function multipleChecker(arrElement) {
 checkYuGiOh(10);
 checkYuGiOh("5");
 checkYuGiOh("fizzbuzz is meh");
+checkYuGiOh("");
+checkYuGiOh(false);
